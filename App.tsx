@@ -13,7 +13,7 @@ const App= () => {
   return (
     <NavigationContainer>
     <Tab.Navigator
-            initialRouteName={'Feeds'}
+            initialRouteName={'Home'}
             screenOptions={{
               headerShown: true,
               tabBarActiveTintColor: '#F4717F',
@@ -27,7 +27,7 @@ const App= () => {
                 padding: 20,
               },
             }}>
-      <Tab.Screen
+      {/* <Tab.Screen
         options={{
           tabBarIcon: ({focused}) => {
             // return <HomeIcon />;
@@ -35,10 +35,11 @@ const App= () => {
         }}
         name={'Feeds'}
         component={Feeds}
-      />
+      /> */}
       <Tab.Screen name="Home" component={Homepage} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
+    {/* <Alertpage /> */}
     </NavigationContainer>
   );
 }
