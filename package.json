@@ -13,6 +13,7 @@
     "@react-native-community/geolocation": "^3.0.6",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",
+    "mapmyindia-map-react-native-beta": "^0.4.2",
     "react": "18.2.0",
     "react-native": "0.71.7",
     "react-native-date-picker": "^4.2.12",
