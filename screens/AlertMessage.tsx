@@ -1,12 +1,10 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'
-
-type Props = {}
+import { View, Text, StyleSheet, Image, Dimensions, Pressable } from 'react-native'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function AlertMessage({}: Props) {
+export default function AlertMessage(props: any) {
   return (
     <View style={styles.container}>
       <Image
@@ -29,6 +27,9 @@ export default function AlertMessage({}: Props) {
         <Text style={styles.textStyle3}>Follow the Precautions mentioned below:</Text>
         <Text></Text>
       </View>
+      <Pressable onPress={props.handleClose()}>
+        <Text>Okay!</Text>
+      </Pressable>
     </View>
   )
 }

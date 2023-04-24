@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
-import {View, Text, StyleSheet, Image} from 'react-native'
+import {View, Text, StyleSheet, Image, Dimensions} from 'react-native'
 
 type Props = {}
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export default function Feeds({}: Props) {
 
@@ -49,7 +52,7 @@ const styles= StyleSheet.create({
         borderColor: 'grey'
     },
     image:{
-        width: 300,
+        width: windowWidth - 10,
         height: 180,
         borderRadius: 10
     },
@@ -65,8 +68,8 @@ const styles= StyleSheet.create({
         fontSize: 16,
         fontWeight: '600',
         paddingHorizontal: 5,
-        paddingVertical: 6,
-        backgroundColor: 'black',
+        paddingVertical: 5,
+        backgroundColor: '#101651',
         borderRadius: 5,
         color: 'white'
     }
