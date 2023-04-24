@@ -21,7 +21,6 @@ const App= () => {
   const [alertdata, setAlertData] = useState({});
 
 
-  setInterval(() => {
       Geolocation.getCurrentPosition((data)=>{
           setLat(data.coords.latitude);
           setLan(data.coords.longitude);
@@ -29,16 +28,14 @@ const App= () => {
       })
       axios.get(`${backendURL}/getspots?lat=${lat}&long=${lan}`)
       .then(function (response) {
-        if(response.data.status == 200) {
-          setCheck(true);
-          setAlertData(response.data.data[0]);
-          console.log(response.data.data[0]);
-        }
+        // if(response.data.status == 200) {
+        //   setCheck(true);
+        // }
+        console.log(response.data.status)
       })
       .catch(function (error) {
           console.log(error)
       })
-  }, 10000);
 
   return (
     <NavigationContainer>
@@ -96,7 +93,7 @@ const App= () => {
         component={Profile}
       />
     </Tab.Navigator>}
-    {check && <Alertpage data={alertdata} handleClose={setAlertData(false)} />}
+    {check && <Alertpage handleClose={setCheck(false)} />}
     </NavigationContainer>
   );
 }
